@@ -1,6 +1,6 @@
 import 'package:kiwi/kiwi.dart';
 
-abstract class MyResolver {
+mixin MyResolver {
   late KiwiContainer container;
 
   /// Resolve instance
