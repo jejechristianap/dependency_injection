@@ -6,7 +6,7 @@ import 'package:kiwi/kiwi.dart';
 /// used by the AgriakuDI class and ADIRegistrantImpl class because
 /// both should have the same register functionality
 
-abstract class MyRegistrant {
+mixin MyRegistrant {
   late KiwiContainer container;
 
   /// Register
