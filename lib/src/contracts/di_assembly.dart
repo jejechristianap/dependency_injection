@@ -1,6 +1,6 @@
-import 'package:dependency_injection/src/contracts/my_registrant.dart';
+import 'package:dependency_injection/src/contracts/di_registrant.dart';
 
-abstract class MyAssembly {
+abstract class DIAssembly {
   /// Assemble
   /// To Register bunch of classes in once. Will be helpful to register
   /// all the instances in each modules, to be used by main app.
@@ -8,5 +8,5 @@ abstract class MyAssembly {
   /// @param:
   /// [r] : [ADIRegistrant]
 
-  assemble(MyRegistrant r);
+  assemble(DIRegistrant r);
 }

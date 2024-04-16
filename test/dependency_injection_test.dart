@@ -86,9 +86,9 @@ class Person {
   Person({required this.pet});
 }
 
-class Assembler implements MyAssembly {
+class Assembler implements DIAssembly {
   @override
-  assemble(MyRegistrant r) {
+  assemble(DIRegistrant r) {
     r.register<Animal>((c) => Cat());
     r.register<Person>((c) => Person(pet: c.resolve()));
   }

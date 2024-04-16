@@ -1,12 +1,12 @@
-import 'package:dependency_injection/src/contracts/my_resolver.dart';
-import 'package:dependency_injection/src/implementations/my_resolver_impl.dart';
+import 'package:dependency_injection/src/contracts/di_resolver.dart';
+import 'package:dependency_injection/src/implementations/di_resolver_impl.dart';
 import 'package:kiwi/kiwi.dart';
 
 /// This abstract class primarily created as a mixins which
 /// used by the AgriakuDI class and ADIRegistrantImpl class because
 /// both should have the same register functionality
 
-mixin MyRegistrant {
+mixin DIRegistrant {
   late KiwiContainer container;
 
   /// Register
@@ -17,9 +17,9 @@ mixin MyRegistrant {
   /// - [resolver] : [T Function(ADIResolver r)]
   /// - [name] : [String?]
 
-  register<T>(T Function(MyResolver r) resolver, {String? name}) {
+  register<T>(T Function(DIResolver r) resolver, {String? name}) {
     container.registerFactory(
-      (c) => resolver(MyResolverImpl(container: c)),
+      (c) => resolver(DIResolverImpl(container: c)),
       name: name,
     );
   }
@@ -33,9 +33,9 @@ mixin MyRegistrant {
   /// - [resolver] : [T Function(ADIResolver r)]
   /// - [name] : [String?]
 
-  registerSingleton<T>(T Function(MyResolver r) resolver, {String? name}) {
+  registerSingleton<T>(T Function(DIResolver r) resolver, {String? name}) {
     container.registerSingleton(
-      (c) => resolver(MyResolverImpl(container: c)),
+      (c) => resolver(DIResolverImpl(container: c)),
       name: name,
     );
   }
